@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rr-pink: #D11D55;
+  --color-rr-blue: #1D4B8B;
+  --color-rr-dark: #020617;
+  --color-rr-sidebar: #060B26;
+}
+
+@layer base {
+  body {
+    @apply bg-rr-dark text-slate-100;
+  }
+}
+
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite;
+  }
+}
+
+/* Custom scrollbar for immersive feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(209, 29, 85, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(209, 29, 85, 0.5);
+}
